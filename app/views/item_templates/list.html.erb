@@ -1,0 +1,135 @@
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+<body>
+  <div class="main-container">
+      <div class="image-row">
+        <img src="pfp.jpg" class="rounded" alt = "Sonia headshot"> </img>
+      </div>
+    
+      <div class="name-row">
+        Sonia Chang
+      </div>
+
+      <div class="social-icons-row">
+
+        <a href="https://www.linkedin.com/in/sonia-chang-993b75223/" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+          Linkedin
+        </a>
+
+      </div>
+
+
+
+
+      <div class="links-row">
+          <% Item.all.each do |the_item| %>
+            <div class = "item">
+              <img src=<%=the_item.thumbnail_url%> class = "thumbnail">
+                <a class="link-text" href=<%=the_item.link_url%> target="_blank">
+                  <%=the_item.link_description%>
+                </a>
+            </div>
+          <% end %>
+      </div>
+
+  </div>
+</body>
+
+
+<style>
+  * {
+    border: 0px red dashed;
+  }
+
+  html{
+    min-height:100%;
+  }
+
+  body{
+    min-height: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-image: linear-gradient(to top, #97c1ff, #bbceff, #d7ddfe, #ededfe, #ffffff);    background-attachment: fixed;
+    background-size: 100% 100%;
+    color:#000000;
+    font-family: "figtree";
+  }
+
+  a{
+    color:midnightblue;
+    text-decoration: none;
+  }
+
+  img.rounded {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    border: 0px solid ;
+    box-shadow: 2px 2px 4px #000000;;
+  }
+  
+  img.thumbnail{
+    object-fit: cover;
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    border: 0px solid ;
+    display: flex;
+    align-items: center;
+  }
+
+  .item{
+    background-color: rgba(255,255,255, 0.5);
+    border-radius: 30px;
+    margin-bottom: 20px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    padding-right:0px;
+    box-shadow: 4px 4px 5px 0px rgba(3, 0, 43, 0.5);
+
+  
+  }
+
+  .main-container{
+    max-width: 580px;
+    margin: auto;
+  }
+  
+  .image-row{
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 17px;
+  }
+
+  .name-row {
+  margin-bottom: 27px;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.social-icons-row {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 17px;
+}
+
+.link-text{
+  text-align: center;
+  flex-grow: 1;
+}
+
+
+
+</style>
